@@ -122,8 +122,8 @@ contains(names, 'Colt', function (result) {
 
 function uniq(arr, cb) {
   console.log(arr)
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) { // this allows you to be one element ahead in the array so you don't remove whatever is in index [0]
+  for (let i = arr.length - 1; i >= 0; i--) { // this should loop backwards in the array | you should go forward and reverse in an array to remove duplicates
+    for (let j = 0; j < arr.length; j++) { // this allows you to be one element ahead in the array so you don't remove whatever is in index [0]
       if (arr[i] === arr[j]) {
         arr.splice(j, 1)
       }
